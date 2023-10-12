@@ -1,0 +1,46 @@
+
+<!--Binding por Interpolación-->
+<h1> {{titulo}} </h1>
+<p>{{alumno.id}}</p>
+<p>{{alumno.nombre}}</p>
+<p>{{alumno.carrera}}</p>
+
+<!-- binding de propiedad--->
+<a [href]="enlace">Sitio Oficial de Angular</a>
+
+<!-- Directiva estructural *ngIf --->
+<div *ngIf="nuevo"> 
+    <h2>{{operacionCarga}}</h2>
+</div>
+
+<div *ngIf="!nuevo"> 
+    <h2>{{operacionEdicion}}</h2>
+</div>
+<!--Directiva estructural *ngFor-->
+<ol>
+    <div *ngFor="let alumno of listaAlumnos">
+        <li>{{alumno}}</li>
+    </div>
+</ol>
+<!--Directiva estructural ngSwitch -->
+<div [ngSwitch]="estado">
+    <p *ngSwitchCase="1">Alumno Regular </p>
+    <p *ngSwitchCase="2">Alumno Libre </p>    
+    <p *ngSwitchDefault>No es alumno</p>    
+</div>
+
+<!--
+ng new nombreApp : crea proyecto
+
+ng generate component  nombreComponente : crea un componente nombre
+
+ng generate class nombreClase: crea una clase 
+
+ng serve: compila el proyecto
+
+localhost:4200  para probar en el navegador
+-->
+
+<input type="text" [(ngModel)]="profesor" id="txtProfesor" name="txtProfesor" > 
+<label>{{profesor}}</label>
+
